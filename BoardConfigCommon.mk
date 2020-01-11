@@ -140,6 +140,9 @@ HWUI_COMPILE_FOR_PERF := true
 # Keymaster
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
+# Lights
+TARGET_PROVIDES_LIBLIGHT := true
+
 # Malloc
 MALLOC_SVELTE := true
 

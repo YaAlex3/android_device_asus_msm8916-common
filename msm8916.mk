@@ -292,10 +292,6 @@ PRODUCT_PACKAGES += \
     librecovery_updater_asus \
     resize2fs_static
 
-# Releasetools
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/releasetools/init.asus.sh:install/bin/init.asus.sh
-
 # RenderScript HAL
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl \
@@ -364,7 +360,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv_zx550kl.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_wlan_nv_zx550kl.bin
 endif
 ifneq ($(filter Z010D,$(TARGET_DEVICE)),)
-$(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 endif
 PRODUCT_PACKAGES += \
     wcnss_service

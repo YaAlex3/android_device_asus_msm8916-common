@@ -24,6 +24,6 @@
 
 #undef PROPERTY_VALUE_MAX
 
-#define BTM_DEF_LOCAL_NAME   "Zenfone 2 Laser"
+#define BTM_DEF_LOCAL_NAME   "Zenfone Max"
 #define BLUETOOTH_QTI_SW TRUE
 #endif

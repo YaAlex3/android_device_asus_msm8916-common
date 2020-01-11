@@ -15,7 +15,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter Z00T Z00L,$(TARGET_DEVICE)),)
+ifneq ($(filter Z00T Z00L Z010D,$(TARGET_DEVICE)),)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
@@ -44,7 +44,7 @@ $(ISDB_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) ln -sf /firmware/image/$(notdir $@) $@
 
 MSM8916_SYMLINKS += $(ISDB_SYMLINKS)
-
+ifneq ($(filter Z00T Z00L,$(TARGET_DEVICE)),)
 KM_IMAGES := \
     keymaste.b00 keymaste.b01 keymaste.b02 keymaste.b03 keymaste.mdt
 
@@ -56,6 +56,7 @@ $(KM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) ln -sf /firmware/image/$(notdir $@) $@
 
 MSM8916_SYMLINKS += $(KM_SYMLINKS)
+endif
 
 MBA_IMAGES := mba.mbn
 
@@ -83,6 +84,7 @@ $(MODEM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 
 MSM8916_SYMLINKS += $(MODEM_SYMLINKS)
 
+ifneq ($(filter Z00T Z00L,$(TARGET_DEVICE)),)
 VENUS_IMAGES := \
     venus.b00 venus.b01 venus.b02 venus.b03 venus.b04 venus.mdt
 
@@ -108,7 +110,7 @@ $(WCNSS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) ln -sf /firmware/image/$(notdir $@) $@
 
 MSM8916_SYMLINKS += $(WCNSS_SYMLINKS)
-
+endif
 WV_IMAGES := \
     widevine.b00 widevine.b01 widevine.b02 widevine.b03 widevine.mdt
 

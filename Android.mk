@@ -96,7 +96,7 @@ $(VENUS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) ln -sf /firmware/image/$(notdir $@) $@
 
 MSM8916_SYMLINKS += $(VENUS_SYMLINKS)
-
+endif
 WCNSS_IMAGES := \
     wcnss.b00 wcnss.b01 wcnss.b02 wcnss.b03 wcnss.b04 wcnss.b05 \
     wcnss.b06 wcnss.b07 wcnss.b08 wcnss.b09 wcnss.b10 wcnss.b11 \
@@ -110,7 +110,7 @@ $(WCNSS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) ln -sf /firmware/image/$(notdir $@) $@
 
 MSM8916_SYMLINKS += $(WCNSS_SYMLINKS)
-endif
+
 WV_IMAGES := \
     widevine.b00 widevine.b01 widevine.b02 widevine.b03 widevine.mdt
 
